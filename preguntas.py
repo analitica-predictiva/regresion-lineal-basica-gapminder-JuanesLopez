@@ -15,29 +15,30 @@ def pregunta_01():
     Complete el código presentado a continuación.
     """
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = ____
+    #df = pd.read_csv('C:/Users/Dellphoto/Documents/Universidad/Analitica predictiva/regresion-lineal-basica-gapminder-JuanesLopez/gm_2008_region.csv')
+    df = pd.read_csv('gm_2008_region.csv')
 
     # Asigne la columna "life" a `y` y la columna "fertility" a `X`
-    y = ____[____].____
-    X = ____[____].____
+    y = df['life'].copy()
+    X = df['fertility'].copy()
 
     # Imprima las dimensiones de `y`
-    print(____.____)
+    print(y.shape)
 
     # Imprima las dimensiones de `X`
-    print(____.____)
+    print(X.shape)
 
     # Transforme `y` a un array de numpy usando reshape
-    y_reshaped = y.reshape(____, ____)
+    y_reshaped = y.values.reshape(y.shape[0], 1)
 
     # Trasforme `X` a un array de numpy usando reshape
-    X_reshaped = X.reshape(____, ____)
+    X_reshaped = X.values.reshape(X.shape[0], 1)
 
     # Imprima las nuevas dimensiones de `y`
-    print(____.____)
+    print(y_reshaped.shape)
 
     # Imprima las nuevas dimensiones de `X`
-    print(____.____)
+    print(X_reshaped.shape)
 
 
 def pregunta_02():
@@ -47,22 +48,23 @@ def pregunta_02():
     """
 
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = ____
+    #df = pd.read_csv('C:/Users/Dellphoto/Documents/Universidad/Analitica predictiva/regresion-lineal-basica-gapminder-JuanesLopez/gm_2008_region.csv')
+    df = pd.read_csv('gm_2008_region.csv')
 
     # Imprima las dimensiones del DataFrame
-    print(____.____)
+    print(df.shape)
 
     # Imprima la correlación entre las columnas `life` y `fertility` con 4 decimales.
-    print(____)
+    print("{:.4f}".format(df['life'].corr(df['fertility'])))
 
     # Imprima la media de la columna `life` con 4 decimales.
-    print(____)
+    print("{:.4f}".format(df['life'].mean()))
 
     # Imprima el tipo de dato de la columna `fertility`.
-    print(____)
+    print(df['fertility'].__class__)
 
     # Imprima la correlación entre las columnas `GDP` y `life` con 4 decimales.
-    print(____)
+    print("{:.4f}".format(df['GDP'].corr(df['life'])))
 
 
 def pregunta_03():
